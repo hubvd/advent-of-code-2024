@@ -1,12 +1,19 @@
 package com.github.hubvd.aoc
 
-data class Point(val x: Int, val y: Int)
+data class Point(val x: Int, val y: Int) {
+    companion object {
+        val UP = Point(0, -1)
+        val DOWN = Point(0, 1)
+        val RIGHT = Point(1, 0)
+        val LEFT = Point(-1, 0)
+    }
+}
 
 private val directions = listOf(
-    Point(-1, 0),
-    Point(1, 0),
-    Point(0, -1),
-    Point(0, 1),
+    Point.LEFT,
+    Point.RIGHT,
+    Point.UP,
+    Point.DOWN
 )
 
 private val diagonals = listOf(
